@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin     : 0;
+    /* font-family: "Segoe UI"; */
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+
+.mat-icon-button {
+    padding             : 0;
+    min-width           : 0;
+    width               : 40px;
+    height              : 40px !important;
+    flex-shrink         : 0;
+    line-height         : 10px !important;
+    border-radius       : 50%;
+    /* position         : relative;
+    bottom              : 30px; */
+    float               : right !important;
+}

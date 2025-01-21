@@ -1,0 +1,109 @@
+<div class="form-container">
+  <h2 mat-dialog-title>Add Customer Qulification</h2>
+  <div class="search">
+    <input type="text" placeholder="Search" (keyup)="search($event.target.value)" focused="'true'" />
+  </div>
+  <mat-dialog-content>
+    <div>
+      <form [formGroup]="form">
+        <!-- <mat-form-field class="example-form-field">
+        <mat-label>Enter your name</mat-label>
+        <input matInput type="text" formControlName="degree">
+      </mat-form-field> -->
+        <mat-form-field appearance="fill" hintLabel="Country name required">
+          <mat-label>Select Degree</mat-label>
+          <mat-select matNativeControl name="country" formControlName="degree">
+            <mat-option value="BSCS(computer science)">BSCS(computer science)</mat-option>
+            <mat-option value="BSCS(software engineering)">BSCS(software engineering)</mat-option>
+            <mat-option value="MBA(business)">MBA(business)</mat-option>
+            <mat-option value="MBA(sales)">MBA(sales)</mat-option>
+            <mat-option value="BE(Mechanic)">BE(Mechanic)</mat-option>
+            <mat-option value="BE(automobiles)">BE(automobiles)</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label> University</mat-label>
+          <textarea matInput placeholder="Address" formControlName="university"></textarea>
+        </mat-form-field>
+
+
+
+        <!-- <mat-form-field appearance="fill" hintLabel="Country name required">
+        <mat-label>Country</mat-label>
+        <mat-select matNativeControl name="country" formControlName="country">
+          <mat-option value="usa">USA</mat-option>
+          <mat-option value="pakistan">pakistan</mat-option>
+          <mat-option value="france">France</mat-option>
+          <mat-option value="germany">Germany</mat-option>
+          <mat-option value="japan">Japan</mat-option>
+          <mat-option value="Mongolia">Mongolia</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+        <mat-form-field appearance="standard">
+          <mat-label>start date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="startdate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>end date</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="enddate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>gpa</mat-label>
+          <input matInput placeholder="Address" formControlName="gpa" maxlength="11" type="number" />
+        </mat-form-field>
+
+
+      </form>
+    </div>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="onNoClick()" color="warn">Close</button>
+    <button mat-raised-button color="accent" (click)="submit()" [disabled]="!form.valid">
+      Submit
+    </button>
+  </mat-dialog-actions>
+</div>
+
+
+<table>
+  <tr>
+    <th>Degree</th>
+    <th>University</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>GPA</th>
+    <!-- <th>Qualification</th> -->
+    <th>Edit</th>
+    <th>Delete</th>
+
+  </tr>
+  <tr *ngFor="let popdata of  this.cusdataService.copy_cusquali; let i = index">
+    <td>{{ popdata.degree }}</td>
+    <td>{{ popdata.university }}</td>
+    <td>{{ popdata.startdate | date:'longDate'}}</td>
+    <td>{{ popdata.enddate | date:'longDate'}}</td>
+    <td>{{ popdata.gpa }}</td>
+
+    <!-- <td><button class="delete" (click)="Opendailogfor_addcus_quali()">!</button></td> -->
+
+
+    <td>
+      <button class="delete" (click)="edit(i, popdata)">/</button>
+    </td>
+    <td><button class="delete" (click)="delete(i)">X</button></td>
+
+  </tr>
+</table>
+
+<!-- <app-addcusinfo [child]="parentvar"></app-addcusinfo> -->

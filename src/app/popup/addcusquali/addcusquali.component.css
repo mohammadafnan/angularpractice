@@ -1,0 +1,50 @@
+p {
+    font-family: Lato;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
+.example-button-row {
+    display        : flex;
+    justify-content: center;
+}
+
+table {
+    margin-top: 5%;
+    width     : 100%;
+    text-align: center;
+}
+
+.delete {
+    border     : 0;
+    color      : red;
+    font-size  : 14px;
+    font-weight: bold;
+    cursor     : pointer;
+}
+
+.display-centre {
+    display        : flex;
+    justify-content: center;
+}
+
+mat-dialog-actions {
+    float   : right;
+    position: relative;
+    bottom  : 60px;
+
+}
+
+mat-form-field {
+    width: 50%;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,55 @@
+<div class="form-container">
+  <h2 mat-dialog-title>Add Customer Info</h2>
+  <mat-dialog-content>
+    <form [formGroup]="form">
+      <mat-form-field class="example-form-field">
+        <mat-label>Enter your name</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Address" formControlName="address"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Phone no</mat-label>
+        <input matInput placeholder="Address" formControlName="phoneno" maxlength="11" type="number" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" hintLabel="Country name required">
+        <mat-label>Country</mat-label>
+        <mat-select matNativeControl name="country" formControlName="country">
+          <mat-option value="usa">USA</mat-option>
+          <mat-option value="pakistan">pakistan</mat-option>
+          <mat-option value="france">France</mat-option>
+          <mat-option value="germany">Germany</mat-option>
+          <mat-option value="japan">Japan</mat-option>
+          <mat-option value="Mongolia">Mongolia</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a DOB</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="DOB">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+
+
+
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="onNoClick()" color="warn">Close</button>
+    <button mat-raised-button color="accent" (click)="submit()" [disabled]="!form.valid">
+      Submit
+    </button>
+  </mat-dialog-actions>
+</div>
+
+<!-- 
+<h2>addcusinfo</h2>
+<h2>{{child}}</h2> -->
