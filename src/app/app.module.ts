@@ -17,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material';
 import { AddcusqualiComponent } from './popup/addcusquali/addcusquali.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SidebarComponent } from './pages/sidebar/sidebar.component';
+import { ProducttableComponent } from './pages/producttable/producttable.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     CustomerComponent,
     AddcusinfoComponent,
     AddcusqualiComponent,
+    SidebarComponent,
+    ProducttableComponent,
 
   ],
   imports: [

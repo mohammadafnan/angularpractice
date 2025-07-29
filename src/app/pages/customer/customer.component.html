@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <nav>
     <div class="logo">
       <img src="../../../assets/image/UE-Logo-1.webp" alt="" />
@@ -255,9 +255,9 @@
     exercitationem? Debitis quis sint fugiat unde, officiis explicabo asperiores
     ad nam, consequuntur vel est mollitia. Ullam, harum provident?
   </p>
-</div>
+</div> -->
 
-<h1>Customer info</h1>
+<!-- <h1>Customer info</h1>
 <div class="search">
   <input
     type="text"
@@ -288,7 +288,6 @@
     <th>Edit</th>
     <th>Delete</th>
   </tr>
-  <!-- <div *ngIf="this.cusdataService.cusinfo != undefined  "> -->
   <tr *ngFor="let popdata of this.cusdataService.Copy_cusinfo; let i = index">
     <td>{{ i + 1 }}</td>
     <td>{{ popdata.name }}</td>
@@ -318,8 +317,7 @@
   >
     No data found
   </h1>
-  <!-- </div> -->
-</table>
+</table> -->
 
 <!-- <div style="display: none">
   <h1>api data</h1>
@@ -382,9 +380,8 @@
   </table>
 </div> -->
 
-<div>
+<!-- <div>
   <h1>Cat data</h1>
-  <!-- <h1>Total Record : {{ this.cusdataService.catdata.length }}</h1> -->
 
   <div class="search">
     <input
@@ -421,17 +418,62 @@
       No data found
     </h1>
   </table>
-</div>
+</div> -->
 <!-- <h3>get data</h3>
 
 <div>{{this.cusdataService.storedata2 | json}}</div> -->
 
-<h3>post data</h3>
+<!-- <h3>post data</h3> -->
 
-<div>{{ this.cusdataService.storedata3 | json }}</div>
-<h2>{{ item }}</h2>
-<input type="text" name="" #box />
+<!-- <div>{{ this.cusdataService.storedata3 | json }}</div> -->
+<!-- <h2>{{ item }}</h2> -->
+<div>
+  <input type="text" name="" #box />
 
-<button (click)="dataevent.emit(box.value)">
-  child to parent data sending
-</button>
+  <button (click)="dataevent.emit(box.value)">
+    child to parent data sending</button
+  ><br />
+
+  <section style="position: absolute; right: 0">
+    <h5>Reactive from</h5>
+    <form [formGroup]="registerForm">
+      <input
+        formControlName="email"
+        type="text"
+        placeholder="Username & email"
+      />
+      <input formControlName="password" type="text" placeholder="password" />
+    </form>
+    <button (click)="save()">save</button>
+
+    <h5 >
+      Credientail Table
+    </h5>
+
+    <h5>{{ this.alert }}</h5>
+
+
+
+    <table>
+      <tr>
+        <th>Sr</th>
+        <th>email</th>
+        <th>password</th>
+    
+      </tr>
+      <tr *ngFor="let popdata of this.userdata; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ popdata.email }}</td>
+        <td>{{ popdata.password }}</td>
+      </tr>
+      <h1
+        style="text-align: center; color: red"
+        *ngIf="this.userdata.length == 0"
+      >
+        No Credientail data found
+      </h1>
+    </table>
+
+  </section>
+</div>
+

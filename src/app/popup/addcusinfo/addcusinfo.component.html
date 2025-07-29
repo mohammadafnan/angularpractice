@@ -4,17 +4,27 @@
     <form [formGroup]="form">
       <mat-form-field class="example-form-field">
         <mat-label>Enter your name</mat-label>
-        <input matInput type="text" formControlName="name">
+        <input matInput type="text" formControlName="name" />
       </mat-form-field>
 
       <mat-form-field appearance="standard">
         <mat-label>Address</mat-label>
-        <textarea matInput placeholder="Address" formControlName="address"></textarea>
+        <textarea
+          matInput
+          placeholder="Address"
+          formControlName="address"
+        ></textarea>
       </mat-form-field>
 
       <mat-form-field appearance="standard">
         <mat-label>Phone no</mat-label>
-        <input matInput placeholder="Address" formControlName="phoneno" maxlength="11" type="number" />
+        <input
+          matInput
+          placeholder="Address"
+          formControlName="phoneno"
+          maxlength="11"
+          type="number"
+        />
       </mat-form-field>
 
       <mat-form-field appearance="fill" hintLabel="Country name required">
@@ -31,20 +41,29 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Choose a DOB</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="DOB">
+        <input matInput [matDatepicker]="picker" formControlName="DOB" />
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker
+          #picker
+          startView="year"
+          [startAt]="startDate"
+        ></mat-datepicker>
       </mat-form-field>
-
-
-
     </form>
   </mat-dialog-content>
 
   <mat-dialog-actions>
     <button mat-raised-button (click)="onNoClick()" color="warn">Close</button>
-    <button mat-raised-button color="accent" (click)="submit()" [disabled]="!form.valid">
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="submit()"
+      [disabled]="!form.valid"
+    >
       Submit
     </button>
   </mat-dialog-actions>

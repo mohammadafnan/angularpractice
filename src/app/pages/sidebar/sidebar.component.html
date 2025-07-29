@@ -1,0 +1,12 @@
+<div class="list">
+  <h4 for="">Foodpick</h4>
+  <ul *ngFor="let list of menulist">
+    <li
+      [ngClass]="selectedCategory === list  ? 'selected' : 'unselected' "
+      (click)="filterby(list)"
+    >
+      {{ list }}
+    </li>
+  </ul>
+</div>
+ 

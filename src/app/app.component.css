@@ -1,0 +1,12 @@
+.bg-white{
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-black{
+    background-color: rgb(26, 26, 26);
+}
+
+.flex{
+display: flex;
+
+}

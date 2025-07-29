@@ -6,6 +6,36 @@ import { Body } from "@angular/http/src/body";
   providedIn: "root",
 })
 export class CusdataService {
+
+ foodproducts = [
+    { name: 'Apple', category: 'Fruits' },
+    { name: 'Banana', category: 'Fruits' },
+    { name: 'Orange', category: 'Fruits' },
+    { name: 'Grapes', category: 'Fruits' },
+    { name: 'Mango', category: 'Fruits' },
+    { name: 'Pineapple', category: 'Fruits' },
+    { name: 'Carrot', category: 'Vegetables' },
+    { name: 'Spinach', category: 'Vegetables' },
+    { name: 'Potato', category: 'Vegetables' },
+    { name: 'Tomato', category: 'Vegetables' },
+    { name: 'Broccoli', category: 'Vegetables' },
+    { name: 'Cucumber', category: 'Vegetables' }
+  ];
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   url = "	https://api.publicapis.org";
   url1 = "https://jsonplaceholder.typicode.com";
   catApi =
@@ -131,4 +161,12 @@ export class CusdataService {
       this.storedata3 = postdata;
     });
   }
+
+
+
+  getmessage(){
+    return "this message come from service"
+  }
+
+  
 }

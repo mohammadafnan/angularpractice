@@ -1,0 +1,19 @@
+
+.selected{
+    color: rgb(0, 145, 48);
+    cursor: pointer;
+}
+.unselected{
+    color: rgb(145, 145, 145);
+    cursor: pointer;
+}
+
+.list{
+    background-color: aliceblue;
+    height: 100%;
+}
+
+h4{
+    text-align: center;
+
+}
