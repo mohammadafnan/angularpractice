@@ -19,7 +19,21 @@ export class CusdataService {
     { name: 'Potato', category: 'Vegetables' },
     { name: 'Tomato', category: 'Vegetables' },
     { name: 'Broccoli', category: 'Vegetables' },
-    { name: 'Cucumber', category: 'Vegetables' }
+    { name: 'Cucumber', category: 'Vegetables' },
+    { name: 'Apple', category: 'Fruits' },
+    { name: 'Banana', category: 'Fruits' },
+    { name: 'Orange', category: 'Fruits' },
+    { name: 'Grapes', category: 'Fruits' },
+    { name: 'Mango', category: 'Fruits' },
+    { name: 'Pineapple', category: 'Fruits' },
+    { name: 'Carrot', category: 'Vegetables' },
+    { name: 'Spinach', category: 'Vegetables' },
+    { name: 'Potato', category: 'Vegetables' },
+    { name: 'Tomato', category: 'Vegetables' },
+    { name: 'Broccoli', category: 'Vegetables' },
+    { name: 'Cucumber', category: 'Vegetables' },
+    { name: 'Apple', category: 'Fruits' },
+
   ];
   
 

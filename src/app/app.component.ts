@@ -59,16 +59,17 @@ export class AppComponent {
   ];
 
   title = "practice-Web";
-
-  inparentdata: string = "";
-  parent_to_child(v) {
-    this.inparentdata = v;
+  rec: string;
+  ptocsend(x: string) {
+    this.rec = x;
   }
 
-  ChildtoParentdata: string = "";
-  clickchild(y) {
-    this.ChildtoParentdata = y;
+  rec2: string;
+  getfromc(x: string) {
+    this.rec2 = x;
+    // alert("child to parent"+this.rec2)
   }
+
   // random() {
   //   this.num = Math.floor(Math.random() * 10)
   // }
@@ -78,6 +79,7 @@ export class AppComponent {
   //   this.child_to_parent = x
   //   console.log(this.child_to_parent)
   // }
+
   isWhite = true;
 
   switch_theme() {

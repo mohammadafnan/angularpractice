@@ -1,13 +1,23 @@
-<input type="text" placeholder="Search"  (input)="search($event.target.value)" />
+<input type="text" placeholder="Search" (input)="search($event.target.value)" />
 <table id="customers">
   <thead>
     <th>Name</th>
     <th>Category</th>
   </thead>
   <tbody>
-    <tr *ngFor="let item of this.filterData">
+    <tr *ngFor="let item of this.paginatedData">
       <td>{{ item.name }}</td>
       <td>{{ item.category }}</td>
     </tr>
+    <tr *ngIf="this.paginatedData.length == 0">
+      <td rowspan="1">no data found</td>
+      <td></td>
+    </tr>
   </tbody>
 </table>
+<div>
+  <button [disabled]="this.currentpage == 1" (click)="prev()">prev</button>{{this.currentpage}} 
+  <button [disabled]="this.currentpage == totalpage()" (click)="next()">
+    next
+  </button>
+</div>

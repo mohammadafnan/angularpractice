@@ -20,9 +20,8 @@ import {
   styleUrls: ["./customer.component.css"],
 })
 export class CustomerComponent implements OnInit {
-  @Input() item;
-  @Output() dataevent = new EventEmitter<string>();
-  // @Output() items = new EventEmitter<string>();
+  @Input() ptcsend: string;
+  @Output() ctpsend = new EventEmitter<String>();
 
   dialogRef: any;
   msg: string;
@@ -35,8 +34,11 @@ export class CustomerComponent implements OnInit {
     public fb: FormBuilder
   ) {
     this.registerForm = this.fb.group({
-      email: ["",[ Validators.required]],
-      password: ["", [Validators.required,Validators.minLength(0),Validators.maxLength(4)]],
+      email: ["", [Validators.required]],
+      password: [
+        "",
+        [Validators.required, Validators.minLength(0), Validators.maxLength(4)],
+      ],
     });
 
     this.msg = this.cusdataService.getmessage();
@@ -47,9 +49,7 @@ export class CustomerComponent implements OnInit {
   save() {
     if (this.registerForm.invalid) {
       alert("Enter Cred");
-    }
-   
-    else {
+    } else {
       this.userdata.push(this.registerForm.value);
       this.registerForm.reset();
     }

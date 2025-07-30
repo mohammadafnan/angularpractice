@@ -426,13 +426,13 @@
 <!-- <h3>post data</h3> -->
 
 <!-- <div>{{ this.cusdataService.storedata3 | json }}</div> -->
-<!-- <h2>{{ item }}</h2> -->
 <div>
-  <input type="text" name="" #box />
+  <input type="text" name="" #box placeholder="child-to-parent-data-transfer"/>
 
-  <button (click)="dataevent.emit(box.value)">
+  <button (click)="ctpsend.emit(box.value)">
     child to parent data sending</button
   ><br />
+  <h2>parent-to-child {{ ptcsend }}</h2>
 
   <section style="position: absolute; right: 0">
     <h5>Reactive from</h5>

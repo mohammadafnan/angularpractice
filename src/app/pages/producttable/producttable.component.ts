@@ -13,10 +13,13 @@ export class ProducttableComponent implements OnInit {
   filterData = [];
   ngOnInit() {
     this.cusdata.foodproducts;
+    this.updatepage();
+
   }
 
   ngOnChanges(): void {
     this.filterby();
+
   }
 
   filterby() {
@@ -25,7 +28,6 @@ export class ProducttableComponent implements OnInit {
       this.filterData = data;
     } else {
       this.filterData = data.filter((x) => x.category == this.category);
-      // alert("in pro")
     }
   }
 
@@ -36,5 +38,35 @@ export class ProducttableComponent implements OnInit {
         x.name.toLowerCase().includes(text) ||
         x.category.toLowerCase().includes(text)
     );
+  }
+
+  pageSize = 10;
+  currentpage = 1;
+  paginatedData = [];
+
+  totalpage() {
+
+    return Math.ceil(this.cusdata.foodproducts.length / this.pageSize);
+  }
+
+  updatepage() {
+    const start = (this.currentpage - 1) * this.pageSize;
+    const end = start + this.pageSize;
+    this.paginatedData = this.cusdata.foodproducts.slice(start, end);
+  }
+
+  next() {
+    if (this.currentpage < this.totalpage()) {
+      this.currentpage++
+      this.updatepage()
+    }
+  }
+
+  prev() {
+    if (this.currentpage > 1) {
+      this.currentpage--
+      this.updatepage()
+    }
+
   }
 }

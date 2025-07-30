@@ -38,14 +38,16 @@ export class AddcusinfoComponent implements OnInit {
 
   submit() {
     if (!this.dataObj.isEdit) {
-      this.cusdataService.cusinfo.push({
-        name: this.form.controls.name.value,
-        address: this.form.controls.address.value,
-        country: this.form.controls.country.value,
-        phoneno: this.form.controls.phoneno.value,
-        DOB: this.form.controls.DOB.value
+      this.cusdataService.cusinfo.push(this.form.value
+      //   {
+      //   name: this.form.controls.name.value,
+      //   address: this.form.controls.address.value,
+      //   country: this.form.controls.country.value,
+      //   phoneno: this.form.controls.phoneno.value,
+      //   DOB: this.form.controls.DOB.value
 
-      });
+      // }
+    );
       this.dialogRef.close();
     }
     else {

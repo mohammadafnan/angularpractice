@@ -33,40 +33,19 @@
 </div>
 
 <div [ngClass]="this.isWhite == true ? ' bg-white' : 'bg-black '">
-  <app-customer
-    [item]="inparentdata"
-    (dataevent)="clickchild($event)"
-  ></app-customer>
+  
+  <input type="text" placeholder="parent-to-child-data-transfer" #input />
+  <button (click)="ptocsend(input.value)">parent-to-child-data-transfer</button>
+  <app-customer [ptcsend]=" this.rec" (ctpsend)="getfromc($event)"></app-customer>
+childtopa{{ this.rec2}}
 
-  <h1>child to parent data sending : {{ ChildtoParentdata }}</h1>
 
-  <input type="text" #inp placeholder="type anything" />
-  <button (click)="parent_to_child(inp.value)">
-    parent to child data sending
-  </button>
-  <h1>parent to child data sending : {{ inparentdata | uppercase }}</h1>
+  <div class="flex">
+    <app-sidebar
+      (categorySelected)="filterby($event)"
+      [selectedCategory]="selectedcategory"
+    ></app-sidebar>
+    <app-producttable [category]="selectedcategory"></app-producttable>
+  </div>
 </div>
-
-<!-- <h1> {{ value  | currency:'EUR' }}</h1> -->
-
-<!-- <h3>Nested loop</h3> -->
-<!-- <ul *ngFor="let fooddata of food_data">
-  <li style="color: rgb(0, 119, 255);">
-    {{fooddata.orderno}} <br>
-    {{fooddata.menu}} <br>
-    {{fooddata.price}} <br>
-  </li>
-  <ul *ngFor="let cus of fooddata.cus_data">
-    <li> {{cus.cusname}} <br>
-      {{cus.cusphoneno}} <br>
-      {{cus.address}} <br>
-    </li>
-
-  </ul>
-</ul> -->
-<div class="flex">
-  <app-sidebar (categorySelected)="filterby($event)" [selectedCategory]="selectedcategory"></app-sidebar>
-  <app-producttable [category]="selectedcategory"></app-producttable>
-</div>
-
 <router-outlet></router-outlet>

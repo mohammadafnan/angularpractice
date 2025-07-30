@@ -1,9 +1,11 @@
 .bg-white{
     background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 .bg-black{
     background-color: rgb(26, 26, 26);
+    color: whitesmoke;
 }
 
 .flex{
