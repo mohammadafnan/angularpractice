@@ -52,7 +52,7 @@ export class ProducttableComponent implements OnInit {
   updatepage() {
     const start = (this.currentpage - 1) * this.pageSize;
     const end = start + this.pageSize;
-    this.paginatedData = this.cusdata.foodproducts.slice(start, end);
+    this.filterData= this.cusdata.foodproducts.slice(start, end);
   }
 
   next() {
